@@ -1,0 +1,157 @@
+@import "../varibales.scss";
+.login-btn{
+    background-color: #0a66c2;
+    border: none;
+    padding: .5rem .8rem;
+    border-radius: .3rem;
+    width: 30%;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.login-cred-input-box{
+    width: 32%;
+    margin-top: 1rem;
+    padding: .5rem .8rem;
+    border-radius: .3rem;
+    outline: none;
+}
+.login-cred-input-container{
+    // display: flex;
+
+}
+.login-page-container{
+    width: 65%;    
+    height: 100vh;
+    margin:1rem auto;
+
+    .login-header-section{
+       
+        display: flex;
+        justify-content: space-between;
+        .login-brand-name{
+            color: $linkedin-theme-color;
+            font-size: 2.7rem;
+            font-weight: bold;
+            letter-spacing: 1.2px;
+            position: relative;
+            .linkedInLogoIcon{
+                width: 2.5rem;
+                position: absolute;
+                top: .55rem;
+                left:11.86
+                3rem
+            }
+        }
+
+        .icon-join-center{
+            display: flex;
+            .icons-center{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 1rem;
+                .icons{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: .5rem;
+                }
+            }
+            .login-btns{
+                border: 1px solid $linkedin-theme-color;
+                margin-right: 1rem;
+                background-color: white;
+                border-radius: .3rem;
+                width: 5rem;
+                font-weight: bold;
+                color: rgba(0, 0, 0, 0.513);
+                &:hover{
+                    background-color:#7fa7d0;
+                }
+                .sign-in{
+                    
+                }
+            }
+        }
+    }
+    .login-page-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 2rem;
+        gap: 2rem;
+        .login-sign-section{
+            h5{
+                font-size: 3rem;
+                margin:1rem 0 0 0 ;
+                letter-spacing: 2px;
+                color: rgba(0, 0, 0, 0.666);
+                font-weight: 100;
+            }
+           
+        }
+        .login-sign-image-section{
+            display: flex;
+           
+            .sign-up-image{
+                max-width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.login-form{
+    margin-top: 1rem;
+    width: 100%;
+    .login-in-container{
+        width: 100%;
+        margin-top: 1rem;
+        // background-color: #0a66c2;
+        .login-in-label{
+            width: 100%;
+            letter-spacing: 2px;
+            font-size: 1.3rem;
+           
+        }
+        .login-in-cred{
+            width: 90%;
+            padding: .6rem;
+            margin-top:.5rem ;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.528);
+        }
+       
+    }
+    .forgot-password{
+        color: $linkedin-theme-color;
+        cursor: pointer;
+    }
+    .sign-in-btn{
+        width: 95%;
+        padding: 1rem;
+        margin-top:1rem ;
+        outline: none;
+        background-color: $linkedin-theme-color;
+        border-radius: 8px;
+        outline: none;
+        color: rgba(255, 255, 255, 0.803);
+        cursor: pointer;
+        border: none;
+        &:hover{
+            background-color: #0a4c8d;
+            color: white;
+        }
+    }
+}
+.sign-up-form-container{
+    font-size: 2.2rem;
+    margin: 1rem auto;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.666);
+    font-weight: 100;
+    width: 35%;
+   
+}
+.google-login-btn{
+    width: 95% !important;
+}
