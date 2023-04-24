@@ -9,6 +9,8 @@ import {CgWorkAlt} from "react-icons/cg";
 import signupImage from "../assets/singupImage.jpg";
 import LoginFormCompoent from './LoginFormCompoent';
 import { useNavigate } from "react-router-dom"
+import { toast,ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -16,19 +18,20 @@ const LoginComponent = () => {
 
   const navigate = useNavigate();
 
-  const onLoginFormSubmitHandler =async ( email,password) =>{    
+  const onLoginFormSubmitHandler =async ( email:string,password:any) =>{    
     try{
       let res=await LoginApi(email,password);
-      console.log(res)
+     toast.success("Signed In Sucessfully")
+     navigate("/home")
     }catch(err){
-      console.log(err.error.message)
+      toast.error("please check email id or password")
     }
   }
 
   const onSignInClickHandler = ( ) =>{
     navigate("/sign-up")
   }
-  return (
+  return (   
     <div className='login-page-container'>
       <header className='login-header-section'>
         <span className='login-brand-name'>LinkedIn<img src={linkedInLogo} alt='linkedInLogo' className='linkedInLogoIcon'/></span>
@@ -65,7 +68,8 @@ const LoginComponent = () => {
           <img src={signupImage} alt='sign-up' className='sign-up-image'/>
         </section>
       </main>    
-    </div>
+    </div> 
+   
   )
 }
 

@@ -1,14 +1,19 @@
 import React from 'react'
 import LoginFormCompoent from '../Components/LoginFormCompoent'
 import {signInApi} from "../api/AuthAPI"
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 const SignUpPage = () => {
+  const navigate = useNavigate()
   const signupFormHandler =async (email:string,password:any ) =>{
    try{
     const res = await signInApi(email,password)
-    console.log(res)
+    toast.success("sign up sucessful");
+    navigate("/home")
+
    }catch(err){
-    console.log(err.error.message)
+    toast.error("something error")
    }
   }
   return (
