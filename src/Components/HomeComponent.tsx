@@ -6,7 +6,7 @@ const HomeComponent = () => {
   return (
     <div className='home-area-section'>
     <PostUpdate/>
-    Home component
+    Home component coming soon
     </div>
   )
 }
