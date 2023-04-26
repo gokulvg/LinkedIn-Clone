@@ -13,6 +13,6 @@ export const postStatus = async(post:string) =>{
         return res
     }catch(err){
         console.log(err);
-        toast.error('error in updating the post')
+        toast.error('error in updating the POST')
     }
 }
