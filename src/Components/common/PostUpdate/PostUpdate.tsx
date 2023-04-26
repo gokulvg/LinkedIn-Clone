@@ -6,6 +6,8 @@ import { MdEventRepeat } from 'react-icons/md';
 import { BsNewspaper } from 'react-icons/bs';
 import "./PostUpdate.scss"
 import ModalComponent from '../Modal/ModalComponent';
+import { postStatus } from '../../../api/fireBaseStore';
+import { toast } from 'react-toastify';
 
 const PostUpdate = () => {
   const [statusUpdated,setStatusUpdate] = useState('');
@@ -17,6 +19,14 @@ const PostUpdate = () => {
   }
   const setStatusUpdateHandler = (status:string) =>{
     setStatusUpdate(status)
+  }
+  const postStautusHandler = async() =>{
+    const res = await postStatus(statusUpdated);
+    console.log(res?.id)
+    if(res?.id){
+      toast.success("Post has been added")
+      setStatusUpdate("")
+    }
   }
 
   return (
@@ -45,7 +55,7 @@ const PostUpdate = () => {
        </span>
       </div>
     </div>
-    <ModalComponent ref={modalRef} statusUpdate = {statusUpdated} setStatusUpdate={setStatusUpdateHandler} onSetModalOpen = {onPostUpdateBtnClickhandler}/>
+    <ModalComponent ref={modalRef} statusUpdate = {statusUpdated} setStatusUpdate={setStatusUpdateHandler} onSetModalOpen = {onPostUpdateBtnClickhandler} postStautusHandler={postStautusHandler}/>
     </>
   )
 }

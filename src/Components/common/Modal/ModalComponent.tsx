@@ -8,12 +8,12 @@ const ModalComponent= forwardRef((props,ref) => {
 
 
   const handleOk = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(e);
+    props.postStautusHandler() 
     setOpen(false);
   };
 
   const handleCancel = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(e);
+    
     setOpen(false);
   };
 
@@ -41,7 +41,7 @@ const ModalComponent= forwardRef((props,ref) => {
           
           ]}
       >
-      <input type='text' className='status-input-bar' onChange={onStatusUpdateChangeHandler}/>
+      <input type='text' className='status-input-bar' onChange={onStatusUpdateChangeHandler} value={props.statusUpdate}/>
       </Modal>
     </>
   );
